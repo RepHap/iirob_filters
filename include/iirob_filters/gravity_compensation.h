@@ -56,6 +56,7 @@
 #include <iirob_filters/GravityCompensationConfig.h>
 #include <dynamic_reconfigure/server.h>
 #include <filters/filter_base.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
 namespace iirob_filters{
 
@@ -94,7 +95,7 @@ private:
     tf2_ros::TransformListener *p_tf_Listener;
     geometry_msgs::TransformStamped transform_, transform_back_;
   
-    uint _num_transform_errors;
+    unsigned int _num_transform_errors;
                 
     dynamic_reconfigure::Server<iirob_filters::GravityCompensationConfig> reconfigCalibrationSrv_; // Dynamic reconfiguration service        
 
